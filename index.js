@@ -20,7 +20,13 @@ class Driver {
 
   passengers() {
     const trips = this.trips();
-    return tri
+    return trips.filter(
+      function (trip){
+          if(trip.driverId===this.id) {
+            return trip.passengerId;
+          }
+      }.bind(this)
+    );
   }
 }
 
