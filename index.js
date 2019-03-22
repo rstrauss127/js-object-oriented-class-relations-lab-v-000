@@ -19,14 +19,9 @@ class Driver {
   }
 
   passengers() {
-    const trips = this.trips();
-    return trips.filter(
-      function (trip){
-          if(trip.driverId===this.id) {
-            return trip.passengerId;
-          }
-      }.bind(this)
-    );
+    return this.trips().map(trip => {
+      return trip.passenger();
+    });
   }
 }
 
