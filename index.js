@@ -39,6 +39,12 @@ class Passenger {
       }.bind(this)
     )
   }
+
+  drivers() {
+    return this.trips().map(trip =>{
+      return trip.driver();
+    })
+  }
 }
 
 class Trip {
